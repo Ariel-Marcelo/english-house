@@ -17,28 +17,14 @@ export const metadata: Metadata = {
   title: 'English Academy | Clases de Inglés Personalizadas en Ecuador',
   description:
     'Clases personalizadas de inglés para adolescentes y adultos. Presencial en Quito o virtual en todo Ecuador. Agenda tu diagnostico gratuito.',
-  /*
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/book-open-thin.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },*/
+    icon: '/get-together.png',
+    apple: '/get-together.png',
+  },
 }
 
 export const viewport: Viewport = {
-  themeColor: '#2a9d8f',
+  themeColor: 'oklch(0.60 0.16 250)',
   width: 'device-width',
   initialScale: 1,
 }

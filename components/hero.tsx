@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative overflow-hidden bg-background py-20 md:py-32"
+      className="relative overflow-hidden bg-background py-5 md:py-11"
     >
       {/* Subtle decorative background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -28,7 +28,7 @@ export function Hero() {
 
           {/* Subheadline */}
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl text-pretty">
-            Clases personalizadas para niños, adolescentes y adultos. Presencial en Puembo-Ecuador o virtual a cualquier parte del país.
+            Clases personalizadas para niños, adolescentes y adultos. En <b>Get Together </b>, el inglés se construye y se vive contigo.
           </p>
 
           {/* CTAs */}
