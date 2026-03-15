@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X, BookOpen } from "lucide-react"
+import Image from "next/image"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
@@ -22,7 +23,15 @@ export function Navbar() {
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#inicio" className="flex items-center gap-2">
-          <BookOpen className="h-7 w-7 text-primary" />
+          <div className="relative h-10 w-10 overflow-hidden rounded-md">
+            <Image
+              src="/get-together.png"
+              alt="Logo Get Together"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
           <span className="text-xl font-bold tracking-tight text-foreground font-serif">
             Get Together
           </span>
