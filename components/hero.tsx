@@ -1,4 +1,4 @@
-import { ArrowRight, MapPin, Monitor } from "lucide-react"
+import {ArrowRight, ClipboardCheck, Clock1Icon, HeartHandshake, MapPin, Monitor, PenTool, UsersIcon} from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
@@ -28,8 +28,7 @@ export function Hero() {
 
           {/* Subheadline */}
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl text-pretty">
-            Clases personalizadas para adolescentes y adultos. Evaluamos tu
-            nivel, diseñamos tu plan y medimos tu progreso real.
+            Clases personalizadas para niños, adolescentes y adultos. Presencial en Puembo-Ecuador o virtual a cualquier parte del país.
           </p>
 
           {/* CTAs */}
@@ -48,19 +47,31 @@ export function Hero() {
           {/* Trust indicators */}
           <div className="mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
+              <ClipboardCheck className="h-5 w-5 text-primary" />
+              <span>Diagnóstico inicial gratuito</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <PenTool className="h-5 w-5 text-primary" />
+              <span>Plan de estudio personalizado según tus objetivos</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <UsersIcon className="h-5 w-5 text-primary" />
+              <span>Seguimiento continuo y acompañamiento cercano</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock1Icon className="h-5 w-5 text-primary" />
+              <span>Horarios flexibles que se adaptan a tu rutina</span>
+            </div>
+            <div className="flex items-center gap-2">
               <Monitor className="h-5 w-5 text-primary" />
-              <span>Clases online y presencial</span>
+              <span>Modalidad presencial en Puembo o virtual</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <HeartHandshake className="h-5 w-5 text-primary" />
+              <span>Ambiente cálido, seguro y sin juicios para aprender</span>
             </div>
             <div className="h-4 w-px bg-border" />
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-foreground">100%</span>
-              <span>Plan personalizado</span>
-            </div>
             <div className="h-4 w-px bg-border hidden sm:block" />
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-foreground">5+</span>
-              <span>Años de experiencia</span>
-            </div>
           </div>
         </div>
       </div>
