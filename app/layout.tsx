@@ -14,7 +14,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'English Academy | Clases de Inglés Personalizadas en Ecuador',
+  title: 'Get Together | Clases de Inglés Personalizadas en Ecuador',
   description:
     'Clases personalizadas de inglés para adolescentes y adultos. Presencial en Quito o virtual en todo Ecuador. Agenda tu diagnostico gratuito.',
   icons: {

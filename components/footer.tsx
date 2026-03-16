@@ -65,7 +65,7 @@ export function Footer() {
 
         <div className="mt-10 border-t border-background/10 pt-6 text-center text-sm opacity-50">
           <p>
-            {"2026 English Academy. Todos los derechos reservados."}
+            {"2026 Get Together. Todos los derechos reservados."}
           </p>
         </div>
       </div>
