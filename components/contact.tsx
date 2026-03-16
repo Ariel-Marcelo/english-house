@@ -1,18 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { Send, MessageCircle, ArrowRight } from "lucide-react"
+import { Send, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 import Image from "next/image";
 
 export function Contact() {
