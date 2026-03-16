@@ -13,6 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import Image from "next/image";
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false)
@@ -64,7 +65,12 @@ export function Contact() {
                 </div>
               ) : (
                   <div className="flex flex-col gap-5">
-                    <img src="/contact-us.jpg" alt="contact-us"/>
+                    <Image
+                        src="/contact-us.jpg"
+                        alt="contact-us"
+                        fill
+                        priority
+                    />
                   </div>
               )}
             </CardContent>
