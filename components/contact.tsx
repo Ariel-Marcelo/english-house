@@ -56,12 +56,7 @@ export function Contact() {
                 </div>
               ) : (
                   <div className="flex flex-col gap-5">
-                    <Image
-                        src="/contact-us.jpg"
-                        alt="contact-us"
-                        fill
-                        priority
-                    />
+                    <img src="/contact-us.jpg" alt="contact-us"/>
                   </div>
               )}
             </CardContent>
