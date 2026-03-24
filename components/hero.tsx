@@ -31,19 +31,24 @@ export function Hero() {
       </div>
 
       {/* White decorative background for logo with curved edge */}
-      <div className="absolute inset-y-0 left-0 z-[1] hidden md:block w-full pointer-events-none">
+      <div className="absolute inset-y-0 left-0 z-[1] hidden lg:block w-full pointer-events-none">
         <svg
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
           className="h-full w-full fill-white"
         >
-          <path d="M 0,0 L 50,0 C 40,35 50,75 25,100 L 0,100 Z" />
+          {/* Tablet path (md) */}
+          <path d="M 0,0 L 100,0 C 80,35 90,75 55,100 L 0,100 Z" className="lg:hidden" />
+          {/* Small laptop path (lg) */}
+          <path d="M 0,0 L 75,0 C 65,35 75,75 40,100 L 0,100 Z" className="hidden lg:block xl:hidden" />
+          {/* Large desktop path (xl+) */}
+          <path d="M 0,0 L 50,0 C 40,35 50,75 25,100 L 0,100 Z" className="hidden xl:block" />
         </svg>
       </div>
 
       {/* Logo in top-left */}
       <div className="absolute left-0 top-0 z-10 hidden md:block">
-        <div className="relative h-[25vh] w-[40vw]">
+        <div className="relative h-[20vh] w-[35vw] max-w-sm lg:max-w-md xl:max-w-lg">
           <Image
               src="/logo.png"
               alt="Get Together English Studio Logo"
@@ -55,7 +60,7 @@ export function Hero() {
       </div>
 
       <div className="relative max-w-7xl px-6 z-10">
-        <div className="flex flex-col items-start text-left pt-[5vh] max-w-2xl">
+        <div className="flex flex-col items-start text-left pt-[5vh] md:max-w-xl lg:max-w-2xl">
           {/* Badge
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
             <MapPin className="h-4 w-4" />
