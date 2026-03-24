@@ -45,16 +45,16 @@ export function Hero() {
       <div className="absolute left-0 top-0 z-10 hidden md:block">
         <div className="relative h-[25vh] w-[40vw]">
           <Image
-            src="/logo.png"
-            alt="Get Together English Studio Logo"
-            fill
-            className="object-contain object-left"
-            priority
+              src="/logo.png"
+              alt="Get Together English Studio Logo"
+              fill
+              className="object-contain object-left"
+              priority
           />
         </div>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 z-10">
+      <div className="relative max-w-7xl px-6 z-10">
         <div className="flex flex-col items-start text-left pt-[5vh] max-w-2xl">
           {/* Badge
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
@@ -74,13 +74,17 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row gap-1">
-            <Button size="lg" asChild className="gap-1">
-              <a href="#contacto">
+            <Button size="lg" asChild className="w-full sm:w-auto">
+              <a
+                  href={`https://wa.me/593963951325?text=${encodeURIComponent("Hola! quiero conocer los cursos de Get Together")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+              >
                 Agenda tu diagnóstico gratuito
                 <MessageCircle className="h-4 w-4" />
               </a>
             </Button>
-            <Button variant="outline" size="lg" asChild>
+            <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
               <a href="#metodologia">Conoce como trabajamos
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -88,31 +92,43 @@ export function Hero() {
           </div>
 
           {/* Trust indicators */}
-          <div className="mt-12 grid grid-cols-1 gap-4 text-sm text-muted-foreground max-w-md">
-            <div className="flex items-center gap-3">
-              <ClipboardCheck className="h-5 w-5 text-primary shrink-0" />
-              <span>Diagnóstico inicial gratuito</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <PenTool className="h-5 w-5 text-primary shrink-0" />
-              <span>Plan de estudio personalizado</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <UsersIcon className="h-5 w-5 text-primary shrink-0" />
-              <span>Seguimiento continuo</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Clock1Icon className="h-5 w-5 text-primary shrink-0" />
-              <span>Horarios flexibles</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <Monitor className="h-5 w-5 text-primary shrink-0" />
-              <span>Modalidad presencial o virtual</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <HeartHandshake className="h-5 w-5 text-primary shrink-0" />
-              <span>Ambiente cálido y seguro</span>
-            </div>
+          <div className="mt-12 flex flex-wrap gap-3 text-sm text-muted-foreground max-w-xl">
+            <Button variant="outline" size="sm" asChild className="rounded-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary transition-all font-normal">
+              <a href="#contacto">
+                <ClipboardCheck className="h-4 w-4 text-primary shrink-0" />
+                <span>Diagnóstico inicial gratuito</span>
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" asChild className="rounded-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary transition-all font-normal">
+              <a href="#metodologia">
+                <PenTool className="h-4 w-4 text-primary shrink-0" />
+                <span>Plan de estudio personalizado</span>
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" asChild className="rounded-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary transition-all font-normal">
+              <a href="#proceso">
+                <UsersIcon className="h-4 w-4 text-primary shrink-0" />
+                <span>Seguimiento continuo</span>
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" asChild className="rounded-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary transition-all font-normal">
+              <a href="#planes">
+                <Clock1Icon className="h-4 w-4 text-primary shrink-0" />
+                <span>Horarios flexibles</span>
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" asChild className="rounded-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary transition-all font-normal">
+              <a href="#planes">
+                <Monitor className="h-4 w-4 text-primary shrink-0" />
+                <span>Modalidad presencial o virtual</span>
+              </a>
+            </Button>
+            <Button variant="outline" size="sm" asChild className="rounded-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary transition-all font-normal">
+              <a href="#nosotros">
+                <HeartHandshake className="h-4 w-4 text-primary shrink-0" />
+                <span>Ambiente cálido y seguro</span>
+              </a>
+            </Button>
           </div>
         </div>
       </div>

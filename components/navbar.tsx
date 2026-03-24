@@ -21,7 +21,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex w-full justify-between px-3 py-4">
         <a href="#inicio" className="flex items-center gap-2">
           <div className="relative h-10 w-10 overflow-hidden rounded-md">
             <Image
