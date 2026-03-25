@@ -1,79 +1,98 @@
-import {
-  ClipboardCheck,
-  PenTool,
-  BarChart3,
-  RefreshCw,
-} from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+  import {
+    ClipboardCheck,
+    PenTool,
+    BarChart3,
+    RefreshCw, ArrowRight,
+  } from "lucide-react"
+  import { Card, CardContent } from "@/components/ui/card"
+  import {Button} from "@/components/ui/button";
 
-const steps = [
-  {
-    icon: ClipboardCheck,
-    title: "Evaluación diagnóstica inicial",
-    description:
-      "Analizamos tu nivel actual, tus fortalezas y las areas donde necesitas mejorar con una evaluación completa.",
-  },
-  {
-    icon: PenTool,
-    title: "Diseño de plan individual",
-    description:
-      "Creamos un plan de estudio único basado en tus objetivos, tu disponibilidad y tu estilo de aprendizaje.",
-  },
-  {
-    icon: BarChart3,
-    title: "Seguimiento y métricas de progreso",
-    description:
-      "Medimos tu avance con indicadores claros para que veas resultados reales en cada etapa.",
-  },
-  {
-    icon: RefreshCw,
-    title: "Ajustes continuos",
-    description:
-      "Adaptamos tu plan conforme avanzas para asegurar que siempre estes en el camino mas eficiente.",
-  },
-]
+  const steps = [
+    {
+      icon: ClipboardCheck,
+      title: "Diagnóstico Inicial",
+      description:
+        "Realizamos una evaluación gratuita para conocer tu nivel actual y entender tu objetivo específico.",
+    },
+    {
+      icon: PenTool,
+      title: "Plan Individual",
+      description:
+        "Diseñamos un plan adaptado a tu nivel, tomando en cuenta tu objetivo, tu disponibilidad y tu ritmo de aprendizaje.",
+    },
+    {
+      icon: BarChart3,
+      title: "Clases enfocádas",
+      description:
+        "Cada sesión tiene un propósito claro y actividades alineadas a tu meta, para que sientas avances reales desde el inicio.",
+    },
+    {
+      icon: RefreshCw,
+      title: "Seguimiento Constante",
+      description:
+        "Adaptamos tu plan conforme avanzas para asegurar que siempre estes en el camino mas eficiente.",
+    },
+  ]
 
-export function Methodology() {
-  return (
-    <section id="metodologia" className="bg-card py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Nuestra Metodología
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground font-serif md:text-4xl text-balance">
-            Enseñanza personalizada que se adapta a ti
-          </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed text-pretty">
-            No creemos en clases genéricas. Cada estudiante recibe un plan
-            diseñado exclusivamente para alcanzar sus metas.
-          </p>
-        </div>
+  export function Methodology() {
+    return (
+        <section id="metodologia" className="bg-background py-16 md:py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="text-center mb-20">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground font-serif md:text-5xl">
+                Aprendizaje personalizado con estructura y propósito
+              </h2>
+            </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step, i) => (
-            <Card
-              key={step.title}
-              className="border-border/50 bg-background transition-shadow hover:shadow-md"
-            >
-              <CardContent className="pt-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <step.icon className="h-6 w-6 text-primary" />
-                </div>
-                <p className="mt-1 text-xs font-semibold text-primary">
-                  {"0" + (i + 1)}
-                </p>
-                <h3 className="mt-3 text-lg font-semibold text-foreground">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {step.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
+            {/* Contenedor del Camino */}
+            <div className="relative grid gap-8 md:grid-cols-4 md:gap-4">
+
+              {/* Línea decorativa de fondo (solo en desktop) */}
+              <div className="absolute top-12 left-0 hidden h-0.5 w-full bg-border md:block -z-0" />
+
+              {steps.map((step, i) => (
+                  <div key={step.title} className="relative z-10 flex flex-col items-center text-center group">
+
+                    {/* Círculo con Icono y Número */}
+                    <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-background border-4 border-primary/20 transition-all duration-300 group-hover:border-primary group-hover:scale-110 shadow-sm">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                        <step.icon className="h-8 w-8 text-primary" />
+                      </div>
+                      {/* Badge con el número */}
+                      <span className="absolute -top-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground shadow-lg">
+                  {i + 1}
+                </span>
+                    </div>
+
+                    {/* Contenido */}
+                    <div className="mt-6 px-4">
+                      <h3 className="text-xl font-bold text-foreground font-serif">
+                        {step.title}
+                      </h3>
+                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                        {step.description}
+                      </p>
+                    </div>
+
+                    {/* Flecha o indicador móvil (solo visible en celular entre pasos) */}
+                    {i < steps.length - 1 && (
+                        <div className="mt-8 block md:hidden">
+                          <div className="h-8 w-0.5 bg-primary/30" />
+                        </div>
+                    )}
+                  </div>
+              ))}
+            </div>
+
+            <div className="mt-20 flex justify-center">
+              <Button size="lg" className="rounded-full px-8 gap-2" asChild>
+                <a href="#programas">
+                  Conoce cómo trabajamos
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+    )
+  }
