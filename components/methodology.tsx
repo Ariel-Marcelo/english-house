@@ -4,7 +4,6 @@
     BarChart3,
     RefreshCw, ArrowRight,
   } from "lucide-react"
-  import { Card, CardContent } from "@/components/ui/card"
   import {Button} from "@/components/ui/button";
 
   const steps = [

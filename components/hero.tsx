@@ -111,7 +111,7 @@ export function Hero() {
               </a>
             </Button>
             <Button variant="outline" size="sm" asChild className="rounded-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary transition-all font-normal">
-              <a href="#proceso">
+              <a href="#modalities">
                 <UsersIcon className="h-4 w-4 text-primary shrink-0" />
                 <span>Seguimiento continuo</span>
               </a>

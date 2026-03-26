@@ -4,7 +4,7 @@ const links = [
   { label: "Inicio", href: "#inicio" },
   { label: "Metodología", href: "#metodologia" },
   { label: "Programas", href: "#programas" },
-  { label: "Proceso", href: "#proceso" },
+  { label: "Modalidades", href: "#modalities" },
   { label: "Testimonios", href: "#testimonios" },
   { label: "Planes", href: "#planes" },
   { label: "Nosotros", href: "#nosotros" },

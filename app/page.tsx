@@ -2,7 +2,7 @@ import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { Methodology } from "@/components/methodology"
 import { Programs } from "@/components/programs"
-import { Process } from "@/components/process"
+import { Modalities } from "@/components/modalities"
 import { Testimonials } from "@/components/testimonials"
 import { Plans } from "@/components/plans"
 import { About } from "@/components/about"
@@ -17,7 +17,7 @@ export default function Page() {
         <Hero />
         <Methodology />
         <Programs />
-        <Process />
+        <Modalities />
         <Testimonials />
         <Plans />
         <About />
