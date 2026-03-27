@@ -4,7 +4,7 @@ import Image from "next/image";
 const learningOptions = [
     {
         num: "01",
-        title: "1 a 1",
+        title: "Clases en pares",
         subtitle: "Personalizado",
         description: "Cada sesión se adapta a tu ritmo, objetivos y disponibilidad real.",
         icon: User,
