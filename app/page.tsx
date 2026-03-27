@@ -19,7 +19,6 @@ export default function Page() {
         <Programs />
         <Modalities />
         <Testimonials />
-        <Plans />
         <About />
         <Contact />
       </main>

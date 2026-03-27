@@ -11,7 +11,6 @@ const navLinks = [
   { label: "Programas", href: "#programas" },
   { label: "Modalidades", href: "#modalities" },
   { label: "Resultados", href: "#testimonios" },
-  { label: "Planes", href: "#planes" },
   { label: "Nosotros", href: "#nosotros" },
   { label: "Contacto", href: "#contacto" },
 ]

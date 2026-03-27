@@ -1,4 +1,4 @@
-import { BookOpen, MapPin, Phone } from "lucide-react"
+import {BookOpen, HeartPlus, Mail, MapPin, Phone} from "lucide-react"
 
 const links = [
   { label: "Inicio", href: "#inicio" },
@@ -6,7 +6,6 @@ const links = [
   { label: "Programas", href: "#programas" },
   { label: "Modalidades", href: "#modalities" },
   { label: "Resultados", href: "#testimonios" },
-  { label: "Planes", href: "#planes" },
   { label: "Nosotros", href: "#nosotros" },
   { label: "Contacto", href: "#contacto" },
 ]
@@ -21,7 +20,7 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <BookOpen className="h-6 w-6" />
               <span className="text-lg font-bold font-serif">
-                English Academy
+                Get Together
               </span>
             </div>
             <p className="mt-3 text-sm opacity-70 leading-relaxed">
@@ -52,12 +51,20 @@ export function Footer() {
             <h4 className="font-semibold">Contacto</h4>
             <ul className="mt-3 flex flex-col gap-3">
               <li className="flex items-center gap-2 text-sm opacity-70">
+                <MapPin className="h-4 w-4 shrink-0" />
+                Vía Férrea N5-22 y 25 de Julio (Ciclovía Chaquiñan de Puembo) Quito, Ecuador
+              </li>
+              <li className="flex items-center gap-2 text-sm opacity-70">
                 <Phone className="h-4 w-4 shrink-0" />
                 +593 963 951 325
               </li>
               <li className="flex items-center gap-2 text-sm opacity-70">
-                <MapPin className="h-4 w-4 shrink-0" />
-                Quito, Ecuador
+                <Mail className="h-4 w-4 shrink-0" />
+                Correo electrónico
+              </li>
+              <li className="flex items-center gap-2 text-sm opacity-70">
+                <HeartPlus className="h-4 w-4 shrink-0" />
+                Redes Sociales
               </li>
             </ul>
           </div>
