@@ -30,7 +30,7 @@ export function About() {
         {/* IMAGEN DE FONDO CON OVERLAY */}
         <div className="absolute inset-0 z-0">
           <Image
-              src="/hero.png" // Asegúrate de tener esta imagen en public/
+              src="/english-house/hero.png" // Asegúrate de tener esta imagen en public/
               alt="About Get Together"
               fill
               className="object-cover opacity-50"

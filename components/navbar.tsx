@@ -24,7 +24,7 @@ export function Navbar() {
         <a href="#inicio" className="flex items-center gap-2">
           <div className="relative h-10 w-10 overflow-hidden rounded-md">
             <Image
-              src="/logo.png"
+              src="/english-house/logo.png"
               alt="Logo Get Together"
               fill
               className="object-contain"

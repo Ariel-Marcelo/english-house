@@ -20,7 +20,7 @@ export function Hero() {
         {/* Background Image con Overlay Gradiente Suave */}
         <div className="absolute inset-0 z-0">
           <Image
-              src="/hero.png"
+              src="/english-house/hero.png"
               alt="Clases de inglés personalizadas"
               fill
               className="object-cover object-center"
@@ -34,7 +34,7 @@ export function Hero() {
         <div className="absolute top-0 left-0 z-20 p-8 md:p-12">
           <div className="relative h-16 w-44 md:h-20 md:w-56 lg:h-24 lg:w-72">
             <Image
-                src="/logo.png"
+                src="/english-house/logo.png"
                 alt="Get Together Logo"
                 fill
                 className="object-contain object-left"

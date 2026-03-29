@@ -42,7 +42,7 @@ export function Modalities() {
             {/* FONTO TOTALMENTE NÍTIDO */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/social-groups.jpg"
+                    src="/english-house/social-groups.jpg"
                     alt="Clases de inglés"
                     fill
                     className="object-cover  object-top opacity-40"
