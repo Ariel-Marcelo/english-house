@@ -37,9 +37,9 @@
     return (
         <section id="metodologia" className="bg-background py-16 md:py-24">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="text-center mb-20">
-              <h2 className="text-3xl font-bold tracking-tight text-foreground font-serif md:text-5xl">
-                Aprendizaje personalizado con estructura y propósito
+            <div className="mb-14 border-l-4 border-primary pl-6">
+              <h2 className="text-5xl md:text-5xl font-black font-serif text-slate-900 tracking-tighter leading-[0.9] mb-8">
+                Aprendizaje <span className="text-primary/40 text-outline"> personalizado </span>  con estructura y <span className="text-primary/40 text-outline"> propósito </span>
               </h2>
             </div>
 

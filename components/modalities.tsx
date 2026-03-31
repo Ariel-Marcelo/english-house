@@ -4,7 +4,7 @@ import Image from "next/image";
 const learningOptions = [
     {
         num: "01",
-        title: "1 a 1",
+        title: "Clases en pares",
         subtitle: "Personalizado",
         description: "Cada sesión se adapta a tu ritmo, objetivos y disponibilidad real.",
         icon: User,
@@ -42,7 +42,7 @@ export function Modalities() {
             {/* FONTO TOTALMENTE NÍTIDO */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/social-groups.jpg"
+                    src="/english-house/social-groups.jpg"
                     alt="Clases de inglés"
                     fill
                     className="object-cover  object-top opacity-40"

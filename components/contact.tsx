@@ -1,135 +1,134 @@
 "use client"
 
-import { useState } from "react"
-import { Send, MessageCircle } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import Image from "next/image";
+import {MessageCircle, CheckCircle2, Clock, MapPin, Sparkles, ArrowRight} from "lucide-react"
+import {Button} from "@/components/ui/button"
+import Image from "next/image"
 
 export function Contact() {
-  const [submitted, setSubmitted] = useState(false)
+    return (
+        <section id="contacto"
+                 className="relative min-h-screen flex items-center py-20 md:py-32 overflow-hidden bg-slate-50/50">
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    setSubmitted(true)
-  }
+            {/* IMAGEN DE FONDO CLARA */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="/english-house/contact-us.jpg"
+                    alt="Contact Get Together"
+                    fill
+                    className="object-cover opacity-20 grayscale-[20%]"
+                    priority
+                />
+                {/* Overlay degradado para suavizar los bordes y asegurar legibilidad */}
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-transparent to-slate-50/80"/>
+            </div>
 
-  return (
-    <section id="contacto" className="bg-card py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Agenda tu Diagnostico
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground font-serif md:text-4xl text-balance">
-            Da el primer paso hoy
-          </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed text-pretty">
-            Completa el formulario y te contactaremos para agendar tu evaluación
-            diagnostica gratuita. Conoceremos tu nivel y tus metas para
-            diseñarte un plan a tu medida.
-          </p>
-        </div>
+            <div className="relative mx-auto max-w-7xl px-6 z-10 w-full">
+                <div className="grid gap-12 lg:grid-cols-12 items-start">
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-5">
-          {/* Form */}
-          <Card className="lg:col-span-3 border-border/50">
-            <CardContent className="pt-6">
-              {submitted ? (
-                <div className="flex flex-col items-center py-12 text-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                    <Send className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="mt-6 text-xl font-semibold text-foreground">
-                    Mensaje enviado
-                  </h3>
-                  <p className="mt-2 text-muted-foreground">
-                    Te contactaremos pronto para agendar tu diagnostico gratuito.
-                  </p>
-                  <Button
-                    className="mt-6"
-                    variant="outline"
-                    onClick={() => setSubmitted(false)}
-                  >
-                    Enviar otro mensaje
-                  </Button>
+                    {/* LADO IZQUIERDO: TEXTO EDITORIAL (5 cols) */}
+                    <div className="lg:col-span-5">
+                        <div
+                            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-[0.2em] mb-6">
+                            <Sparkles className="h-3 w-3"/>
+                            Empieza hoy
+                        </div>
+
+                        <h2 className="text-5xl md:text-7xl font-black font-serif text-slate-900 tracking-tighter leading-[0.85] mb-8">
+                            Agenda tu <br/>
+                            <span className="text-primary italic font-light">diagnóstico.</span>
+                        </h2>
+
+                        <p className="text-xl font-serif italic text-slate-600 leading-relaxed border-l-4 border-primary/20 pl-6 mb-10">
+                            El diagnóstico nos permite diseñar un plan realista, acorde a tu ritmo, tu objetivo y tu
+                            disponibilidad.
+                        </p>
+
+                        <div className="space-y-4">
+                            {[
+                                "Evaluamos tu nivel",
+                                "Definimos tu objetivo",
+                                "Te recomendamos un plan personalizado"
+                            ].map((item, idx) => (
+                                <div key={idx} className="flex items-center gap-3">
+                                    <CheckCircle2 className="h-5 w-5 text-primary"/>
+                                    <span className="font-bold text-slate-700 tracking-tight">{item}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* LADO DERECHO: INFO CARDS (7 cols) */}
+                    <div className="lg:col-span-7 grid gap-6 md:grid-cols-2">
+
+                        {/* CARD PRINCIPAL WHATSAPP */}
+                        <div
+                            className="md:col-span-2 p-10 rounded-[3rem] bg-white shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8">
+                            <div className="text-center md:text-left">
+                                <h3 className="text-2xl font-black font-serif text-slate-900 mb-2">¿Listo para
+                                    hablar?</h3>
+                                <p className="text-slate-500 text-sm font-medium">Agenda tu cita directamente por
+                                    WhatsApp.</p>
+                            </div>
+                            <Button size="lg"
+                                    className="h-16 px-10 rounded-full text-base font-bold group shadow-lg shadow-primary/20"
+                                    asChild>
+                                <a href="https://wa.me/593963951325" target="_blank" rel="noopener noreferrer">
+                                    Agendar por WhatsApp
+                                    <MessageCircle className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform"/>
+                                </a>
+                            </Button>
+                        </div>
+
+                        {/* CARD DETALLES SESIÓN */}
+                        <div className="p-8 rounded-[2.5rem] bg-primary/5 border border-primary/10 backdrop-blur-md">
+                            <div
+                                className="h-12 w-12 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6">
+                                <Clock className="h-6 w-6 text-primary"/>
+                            </div>
+                            <h4 className="font-black text-slate-900 uppercase tracking-tight mb-2">Duración</h4>
+                            <p className="text-lg font-serif italic text-slate-600">Aproximadamente 30 minutos.</p>
+                        </div>
+
+                        {/* CARD MODALIDAD */}
+                        <div className="group p-8 rounded-[2.5rem] bg-slate-900 text-white shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                            <div className="flex justify-between items-start mb-6">
+                                <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center  group-hover:bg-primary group-hover:text-white transition-colors">
+                                    <MapPin className="h-6 w-6" />
+                                </div>
+                                {/* Enlace sutil a Maps */}
+                                <a
+                                    href="https://maps.google.com/?q=Puembo,Ecuador" // Reemplaza con tu link real de Google Maps
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-[10px] font-black uppercase tracking-widest text-white hover:text-primary transition-colors flex items-center gap-1"
+                                >
+                                    Ver Mapa <ArrowRight className="h-3 w-3" />
+                                </a>
+                            </div>
+
+                            <h4 className="font-black text-white uppercase tracking-tight mb-2">Modalidad</h4>
+                            <p className="text-sm leading-relaxed text-slate-300 mb-6">
+                                Presencial en <span className="text-white font-bold">Puembo-Ecuador</span> o <span className="text-white font-bold">Virtual</span> a todo el país.
+                            </p>
+
+                            {/* Botón de acción secundario dentro de la tarjeta */}
+                            <Button
+                                variant="link"
+                                className="p-0 h-auto text-white/50 hover:text-white text-xs font-bold uppercase tracking-tighter"
+                                asChild
+                            >
+                                <a
+                                    href="https://maps.google.com/?q=Puembo,Ecuador"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Puembo, Pichincha — Ecuador
+                                </a>
+                            </Button>
+                        </div>
+                    </div>
                 </div>
-              ) : (
-                  <div className="flex flex-col gap-5">
-                    <img src="/contact-us.jpg" alt="contact-us"/>
-                  </div>
-              )}
-            </CardContent>
-          </Card>
-
-          {/* WhatsApp & Info */}
-          <div className="flex flex-col gap-6 lg:col-span-2">
-            <Card className="border-border/50">
-              <CardContent className="pt-6">
-                <h3 className="text-lg font-semibold text-foreground">
-                  Contacto directo por WhatsApp
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  Si prefieres escribirnos directamente? Envía un mensaje por
-                  WhatsApp y te responderemos lo antes posible.
-                </p>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="mt-4 w-full gap-2"
-                >
-                  <a
-                    href="https://wa.me/593963951325"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessageCircle className="h-4 w-4" />
-                    +593 963 951 325
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border/50 bg-primary/5">
-              <CardContent className="pt-6">
-                <h3 className="text-lg font-semibold text-foreground">
-                  Que incluye el diagnostico?
-                </h3>
-                <ul className="mt-4 flex flex-col gap-3 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                    Evaluación completa de tu nivel actual
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                    Identificación de fortalezas y areas de mejora
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                    Recomendación del programa ideal para ti
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                    Sin costo y sin compromiso
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border/50">
-              <CardContent className="pt-6">
-                <h3 className="text-lg font-semibold text-foreground">
-                  Redes Sociales
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Próximamente estaremos en redes sociales. Por ahora, contáctanos
-                  directamente por WhatsApp o el formulario.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+            </div>
+        </section>
+    )
 }

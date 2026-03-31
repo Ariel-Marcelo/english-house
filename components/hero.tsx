@@ -3,10 +3,9 @@ import {
   ClipboardCheck,
   Clock1Icon,
   HeartHandshake,
-  MapPin, MessageCircle,
+  MessageCircle,
   Monitor,
   PenTool,
-  Smartphone,
   UsersIcon
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -14,129 +13,90 @@ import Image from "next/image"
 
 export function Hero() {
   return (
-    <section
-      id="inicio"
-      className="relative overflow-hidden bg-background py-16 md:py-24"
-    >
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 overflow-hidden">
-        <Image
-          src="/hero.png"
-          alt="Clases de inglés personalizadas"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-background/65" />
-      </div>
-
-      {/* White decorative background for logo with curved edge */}
-      <div className="absolute inset-y-0 left-0 z-[1] hidden lg:block w-full pointer-events-none">
-        <svg
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-          className="h-full w-full fill-white"
-        >
-          {/* Tablet path (md) */}
-          <path d="M 0,0 L 100,0 C 80,35 90,75 55,100 L 0,100 Z" className="lg:hidden" />
-          {/* Small laptop path (lg) */}
-          <path d="M 0,0 L 75,0 C 65,35 75,75 40,100 L 0,100 Z" className="hidden lg:block xl:hidden" />
-          {/* Large desktop path (xl+) */}
-          <path d="M 0,0 L 50,0 C 40,35 50,75 25,100 L 0,100 Z" className="hidden xl:block" />
-        </svg>
-      </div>
-
-      {/* Logo in top-left */}
-      <div className="absolute left-0 top-0 z-10 hidden md:block">
-        <div className="relative h-[20vh] w-[35vw] max-w-sm lg:max-w-md xl:max-w-lg">
+      <section
+          id="inicio"
+          className="relative min-h-[90vh] flex items-center overflow-hidden bg-white"
+      >
+        {/* Background Image con Overlay Gradiente Suave */}
+        <div className="absolute inset-0 z-0">
           <Image
-              src="/logo.png"
-              alt="Get Together English Studio Logo"
+              src="/english-house/hero.png"
+              alt="Clases de inglés personalizadas"
               fill
-              className="object-contain object-left"
+              className="object-cover object-center"
               priority
           />
+          {/* Gradiente que limpia el área del texto y logo a la izquierda */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/10 lg:via-white/80 lg:to-transparent" />
         </div>
-      </div>
 
-      <div className="relative max-w-7xl px-6 z-10">
-        <div className="flex flex-col items-start text-left pt-[5vh] md:max-w-xl lg:max-w-2xl">
-          {/* Badge
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
-            <MapPin className="h-4 w-4" />
-            <span>Presencial en Quito o virtual en todo Ecuador</span>
-          </div>*/}
-
-          {/* Heading */}
-          <h6 className="text-4xl font-bold leading-tight tracking-tight text-foreground font-serif md:text-3xl lg:text-4xl text-balance">
-            Tu inglés, a tu ritmo y con un plan hecho para ti
-          </h6>
-
-          {/* Subheadline */}
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground md:text-sm text-pretty max-w-lg">
-            Clases personalizadas para niños, adolescentes y adultos. Presencial en Puembo-Ecuador o virtual a cualquier parte del país.
-          </p>
-
-          {/* CTAs */}
-          <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row gap-1">
-            <Button size="lg" asChild className="w-full sm:w-auto">
-              <a
-                  href={`https://wa.me/593963951325?text=${encodeURIComponent("Hola! quiero conocer los cursos de Get Together")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                Agenda tu diagnóstico gratuito
-                <MessageCircle className="h-4 w-4" />
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
-              <a href="#metodologia">Conoce como trabajamos
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
-          </div>
-
-          {/* Trust indicators */}
-          <div className="mt-12 flex flex-wrap gap-3 text-sm text-muted-foreground max-w-xl">
-            <Button variant="outline" size="sm" asChild className="rounded-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary transition-all font-normal">
-              <a href="#contacto">
-                <ClipboardCheck className="h-4 w-4 text-primary shrink-0" />
-                <span>Diagnóstico inicial gratuito</span>
-              </a>
-            </Button>
-            <Button variant="outline" size="sm" asChild className="rounded-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary transition-all font-normal">
-              <a href="#metodologia">
-                <PenTool className="h-4 w-4 text-primary shrink-0" />
-                <span>Plan de estudio personalizado</span>
-              </a>
-            </Button>
-            <Button variant="outline" size="sm" asChild className="rounded-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary transition-all font-normal">
-              <a href="#modalities">
-                <UsersIcon className="h-4 w-4 text-primary shrink-0" />
-                <span>Seguimiento continuo</span>
-              </a>
-            </Button>
-            <Button variant="outline" size="sm" asChild className="rounded-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary transition-all font-normal">
-              <a href="#planes">
-                <Clock1Icon className="h-4 w-4 text-primary shrink-0" />
-                <span>Horarios flexibles</span>
-              </a>
-            </Button>
-            <Button variant="outline" size="sm" asChild className="rounded-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary transition-all font-normal">
-              <a href="#planes">
-                <Monitor className="h-4 w-4 text-primary shrink-0" />
-                <span>Modalidad presencial o virtual</span>
-              </a>
-            </Button>
-            <Button variant="outline" size="sm" asChild className="rounded-full gap-2 border-primary/20 hover:bg-primary/5 hover:border-primary transition-all font-normal">
-              <a href="#nosotros">
-                <HeartHandshake className="h-4 w-4 text-primary shrink-0" />
-                <span>Ambiente cálido y seguro</span>
-              </a>
-            </Button>
+        {/* Area del Logo - Posición fija con espacio protegido */}
+        <div className="absolute top-0 left-0 z-20 p-8 md:p-12">
+          <div className="relative h-16 w-44 md:h-20 md:w-56 lg:h-24 lg:w-72">
+            <Image
+                src="/english-house/logo.png"
+                alt="Get Together Logo"
+                fill
+                className="object-contain object-left"
+                priority
+            />
           </div>
         </div>
-      </div>
-    </section>
+
+        <div className="relative max-w-7xl mx-auto px-6 z-10 w-full pt-32 md:pt-40">
+          <div className="max-w-2xl lg:max-w-3xl">
+
+            {/* Título Principal - Tamaño ajustado y estilo editorial */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-serif text-slate-900 tracking-tighter leading-[0.9] mb-6">
+              Tu inglés, <br />
+              <span className="text-primary italic font-light">a tu ritmo.</span>
+            </h1>
+
+            <p className="max-w-lg text-lg md:text-xl font-serif italic text-slate-600 leading-relaxed border-l-4 border-primary/20 pl-6 mb-10">
+              Un plan hecho a tu medida para niños, adolescentes y adultos. Presencial en Puembo o virtual a todo el país.
+            </p>
+
+            {/* CTAs con mejor espaciado */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-16">
+              <Button size="lg" className="h-14 px-8 rounded-full text-base font-bold shadow-md hover:shadow-lg transition-all" asChild>
+                <a
+                    href={`https://wa.me/593963951325?text=${encodeURIComponent("Hola! quiero conocer los cursos de Get Together")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                  Agenda tu diagnóstico
+                  <MessageCircle className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" className="h-14 px-8 rounded-full text-base font-bold text-slate-700 bg-white/50 backdrop-blur-sm border-slate-200" asChild>
+                <a href="#metodologia">
+                  Cómo trabajamos
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </div>
+
+            {/* Trust Indicators - Más sutiles para no sobrecargar */}
+            <div className="flex flex-wrap gap-2 max-w-2xl opacity-90">
+              {[
+                { icon: ClipboardCheck, label: "Diagnóstico gratuito" },
+                { icon: PenTool, label: "Plan personalizado" },
+                { icon: UsersIcon, label: "Seguimiento continuo" },
+                { icon: Clock1Icon, label: "Horarios flexibles" },
+                { icon: Monitor, label: "Presencial o Virtual" },
+                { icon: HeartHandshake, label: "Ambiente cálido" },
+              ].map((item, idx) => (
+                  <div
+                      key={idx}
+                      className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-slate-200/60 bg-white/40 backdrop-blur-xs text-[10px] font-bold uppercase tracking-wider text-slate-500"
+                  >
+                    <item.icon className="h-3 w-3 text-primary opacity-70" />
+                    {item.label}
+                  </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
   )
 }

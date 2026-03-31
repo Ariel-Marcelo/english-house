@@ -3,91 +3,119 @@ import {
   Plane,
   Briefcase,
   MessageCircle,
-  BookOpen,
   Languages,
+  ArrowRight,
+  Sparkles
 } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
 
 const programs = [
   {
     icon: Languages,
     title: "Inglés para trabajo",
-    description:
-      "Reuniones, entrevistas, presentaciones y comunicación profesional.",
+    description: "Reuniones, entrevistas y comunicación profesional.",
+    bg: "bg-blue-50/40",
+    accent: "text-blue-600",
+    order: "order-1"
   },
   {
     icon: GraduationCap,
     title: "Inglés Académico",
-    description:
-      "Desarrollo de habilidades lingüísticas para estudios y contextos formales.",
+    description: "Habilidades lingüísticas para estudios superiores.",
+    bg: "bg-slate-50",
+    accent: "text-slate-600",
+    order: "order-2"
   },
   {
     icon: Plane,
     title: "Inglés para migración",
-    description:
-      "Enfoque práctico en comunicación diaria, adaptación cultural y situaciones reales del día a día.",
+    description: "Enfoque práctico en comunicación diaria y adaptación cultural.",
+    bg: "bg-orange-50/40",
+    accent: "text-orange-600",
+    order: "order-3"
   },
   {
     icon: Briefcase,
     title: "Conversación personalizada",
-    description:
-      "Fluidez, pronunciación y seguridad al hablar.",
+    description: "Sesiones enfocadas en tu fluidez y seguridad al hablar.",
+    bg: "bg-primary/5",
+    accent: "text-primary",
+    order: "order-4"
   },
   {
     icon: MessageCircle,
-    title: "Social Hour-Language Exchange",
-    description:
-      "Espacios guiados de práctica comunicativa en un entorno social, relajado y seguro. Aquí el objetivo es hablar, equivocarse, soltarse y ganar confianza usando el inglés dentro de una experiencia real.",
+    title: "Social Hour - Language Exchange",
+    description: "Espacios guiados de práctica en un entorno social y relajado. El objetivo es hablar, equivocarse y ganar confianza usando el inglés dentro de una experiencia real y segura.",
+    bg: "bg-white border-2 border-primary/10",
+    accent: "text-primary",
+    featured: true,
+    order: "lg:order-5"
   }
 ]
 
 export function Programs() {
   return (
-      <section id="programas" className="bg-background py-15 md:py-23 overflow-hidden">
+      <section id="programas" className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground font-serif md:text-5xl">
-              Tu meta define tu programa
+
+          {/* HEADER */}
+          <div className="mb-12 border-l-4 border-primary pl-6">
+            <h2 className="text-4xl md:text-5xl font-black font-serif text-slate-900 tracking-tight leading-none">
+              Tu meta define <span className="text-primary">tu programa.</span>
             </h2>
-            <a
-                href="#contacto"
-                className="mt-4 inline-block text-sm md:text-base font-medium text-foreground/80 underline decoration-primary/30 underline-offset-4 transition-all hover:text-foreground hover:decoration-primary"
-            >
-              Pregunta por nuestro servicio de nivelación académica en Inglés,
-              tareas dirigidas en Lengua extranjera y preparación para suficiencia B2
-            </a>
+            <div className="mt-4 flex flex-col md:flex-row md:items-center gap-4">
+              <p className="text-lg font-serif italic text-slate-500">
+                Pregunta por nuestro servicio de nivelación académica y preparación para suficiencia B2
+              </p>
+              <a
+                  href="#contacto"
+                  className="text-sm font-bold uppercase tracking-widest text-primary hover:opacity-70 transition-all flex items-center gap-2"
+              >
+                Contactanos <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
           </div>
 
-          {/* Contenedor tipo Collage / Bubbles */}
-          <div className="flex flex-wrap justify-center gap-4">
-            {programs.map((program, index) => (
+          {/* GRID ASIMÉTRICO */}
+          {/* Mobile: 1 col | Tablet/Small Laptop: 2 cols | Large Laptop: 3 cols */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+
+            {programs.map((program) => (
                 <div
                     key={program.title}
                     className={`
-                group relative p-8 rounded-[2.5rem] transition-all duration-300
-                hover:-translate-y-2 hover:shadow-xl
-                /* Alternamos tamaños y colores para efecto collage */
-                ${index % 2 === 0 ? 'w-full md:w-[45%] bg-blue-50/50' : 'w-full md:w-[52%] bg-orange-50/50'}
-                ${index === 4 ? 'md:w-[98%] bg-white' : ''} 
+                group relative p-8 rounded-[2rem] transition-all duration-300
+                hover:shadow-lg border border-slate-100/60 flex flex-col
+                ${program.bg}
+                ${program.order}
+                ${program.featured ? 'lg:col-start-3 lg:row-start-1 lg:row-span-2' : ''}
               `}
                 >
-                  <div className="flex flex-col md:flex-row gap-6 items-start">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white shadow-sm group-hover:scale-110 transition-transform">
-                      <program.icon className="h-7 w-7 text-primary" />
+                  <div className="flex flex-col h-full">
+                    <div className={`p-3 w-fit rounded-xl bg-white shadow-sm mb-6 ${program.accent}`}>
+                      <program.icon className="h-6 w-6" />
                     </div>
 
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground font-serif">
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-slate-900 font-serif leading-tight">
                         {program.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      <p className={`mt-3 leading-relaxed text-slate-600 ${program.featured ? 'text-base' : 'text-sm'}`}>
                         {program.description}
                       </p>
                     </div>
-                  </div>
 
-                  {/* Decoración sutil de burbuja */}
-                  <div className="absolute -bottom-2 -right-2 h-20 w-20 bg-primary/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {program.featured && (
+                        <div className="mt-8 pt-6 border-t border-primary/10">
+                          <div className="flex items-center gap-2 text-primary mb-2">
+                            <Sparkles className="h-4 w-4" />
+                            <span className="text-[10px] font-black uppercase tracking-widest">Experiencia Inmersiva</span>
+                          </div>
+                          <p className="text-xs italic text-slate-400">
+                            "Nuestro espacio favorito para soltarse y ganar seguridad."
+                          </p>
+                        </div>
+                    )}
+                  </div>
                 </div>
             ))}
           </div>
