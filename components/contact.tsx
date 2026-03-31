@@ -12,7 +12,7 @@ export function Contact() {
             {/* IMAGEN DE FONDO CLARA */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/english-house/contact-us.jpg"
+                    src="/contact-us.jpg"
                     alt="Contact Get Together"
                     fill
                     className="object-cover opacity-20 grayscale-[20%]"
