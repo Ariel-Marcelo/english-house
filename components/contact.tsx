@@ -15,11 +15,11 @@ export function Contact() {
                     src="/puembo.jpg"
                     alt="Contact Get Together"
                     fill
-                    className="object-cover opacity-20 grayscale-[20%]"
+                    className="object-cover opacity-30"
                     priority
                 />
                 {/* Overlay degradado para suavizar los bordes y asegurar legibilidad */}
-                <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-transparent to-slate-50/80"/>
+                <div className="absolute inset-0  from-slate-50/80 via-transparent to-slate-50/80"/>
             </div>
 
             <div className="relative mx-auto max-w-7xl px-6 z-10 w-full">
