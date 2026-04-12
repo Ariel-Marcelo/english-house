@@ -12,7 +12,7 @@ export function Contact() {
             {/* IMAGEN DE FONDO CLARA */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/contact-us.jpg"
+                    src="/puembo.jpg"
                     alt="Contact Get Together"
                     fill
                     className="object-cover opacity-20 grayscale-[20%]"
@@ -97,7 +97,7 @@ export function Contact() {
                             <div className="flex justify-between items-start mb-6">
                                 <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center  group-hover:bg-primary group-hover:text-white transition-colors">
                                     <a
-                                        href="https://maps.google.com/?q=Puembo,Ecuador" // Reemplaza con tu link real de Google Maps
+                                        href="https://maps.app.goo.gl/uTiDmJZd3epSwFmX8?g_st=aw" // Reemplaza con tu link real de Google Maps
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -107,7 +107,7 @@ export function Contact() {
                                 </div>
                                 {/* Enlace sutil a Maps */}
                                 <a
-                                    href="https://maps.google.com/?q=Puembo,Ecuador" // Reemplaza con tu link real de Google Maps
+                                    href="https://maps.app.goo.gl/uTiDmJZd3epSwFmX8?g_st=aw" // Reemplaza con tu link real de Google Maps
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-[10px] font-black uppercase tracking-widest text-white hover:text-primary transition-colors flex items-center gap-1"
@@ -128,7 +128,7 @@ export function Contact() {
                                 asChild
                             >
                                 <a
-                                    href="https://maps.google.com/?q=Puembo,Ecuador"
+                                    href="https://maps.app.goo.gl/uTiDmJZd3epSwFmX8?g_st=aw"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

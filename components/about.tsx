@@ -78,34 +78,6 @@ export function About() {
                   asegurando un acompañamiento real y avances visibles.
                 </p>
               </div>
-
-              {/* STATS */}
-              <div className="mt-12 flex flex-wrap gap-10 border-t border-white/10 pt-10">
-                <div>
-                  <p className="text-4xl font-black text-white tracking-tighter">
-                    5+
-                  </p>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-[#F36C21] mt-1">
-                    Años Exp.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-4xl font-black text-white tracking-tighter">
-                    100+
-                  </p>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-[#F36C21] mt-1">
-                    Estudiantes
-                  </p>
-                </div>
-                <div>
-                  <p className="text-4xl font-black text-white tracking-tighter">
-                    95%
-                  </p>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-[#F36C21] mt-1">
-                    Éxito
-                  </p>
-                </div>
-              </div>
             </div>
 
           </div>
