@@ -21,7 +21,7 @@
     },
     {
       icon: BarChart3,
-      title: "Clases enfocádas",
+      title: "Clases enfocadas",
       description:
         "Cada sesión tiene un propósito claro y actividades alineadas a tu meta, para que sientas avances reales desde el inicio.",
     },
@@ -39,21 +39,21 @@
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-14 border-l-4 border-primary pl-6">
               <h2 className="text-5xl md:text-5xl font-black font-serif text-slate-900 tracking-tighter leading-[0.9] mb-8">
-                Aprendizaje <span className="text-primary/40 text-outline"> personalizado </span>  con estructura y <span className="text-primary/40 text-outline"> propósito </span>
+                Aprendizaje <span className="text-primary text-outline"> personalizado </span>  con estructura y <span className="text-primary text-outline"> propósito </span>
               </h2>
             </div>
 
             {/* Contenedor del Camino */}
-            <div className="relative grid gap-8 md:grid-cols-4 md:gap-4">
+            <div className="relative grid gap-8 md:grid-cols-4 md:gap-4 ">
 
               {/* Línea decorativa de fondo (solo en desktop) */}
-              <div className="absolute top-12 left-0 hidden h-0.5 w-full bg-border md:block -z-0" />
+              <div className="absolute top-12 left-0 hidden h-0.5 w-full bg-[#F36C21] md:block" />
 
               {steps.map((step, i) => (
                   <div key={step.title} className="relative z-10 flex flex-col items-center text-center group">
 
                     {/* Círculo con Icono y Número */}
-                    <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-background border-4 border-primary/20 transition-all duration-300 group-hover:border-primary group-hover:scale-110 shadow-sm">
+                    <div className="relative flex h-24 w-24 items-center justify-center rounded-full border-[#F36C21] bg-background border-4   transition-all duration-300 group-hover:border-primary group-hover:scale-110 shadow-sm">
                       <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                         <step.icon className="h-8 w-8 text-primary" />
                       </div>

@@ -55,10 +55,10 @@ export function Testimonials() {
                 Resultados
               </div>
               <h2 className="text-5xl md:text-7xl font-black font-serif text-slate-900 tracking-tighter leading-[0.9] mb-8">
-                Resultados que <br /> <span className="text-primary/40 text-outline">se sienten</span>
+                Resultados que <br /> <span className="text-primary text-outline">se sienten</span>
               </h2>
               <p className="text-xl font-serif italic text-slate-500 border-l-4 border-primary/20 pl-6 max-w-md leading-relaxed">
-                "Porque aprender inglés no solo es saber más, es sentirse capaz de usarlo."
+                "Porque aprender inglés no es solo estudiarlo, es conocer el mundo a través de él."
               </p>
             </div>
 

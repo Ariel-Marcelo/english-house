@@ -27,11 +27,14 @@ export function Contact() {
 
                     {/* LADO IZQUIERDO: TEXTO EDITORIAL (5 cols) */}
                     <div className="lg:col-span-5">
-                        <div
-                            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-[0.2em] mb-6">
-                            <Sparkles className="h-3 w-3"/>
-                            Empieza hoy
-                        </div>
+                        <a href="https://wa.me/593963951325" target="_blank" rel="noopener noreferrer">
+                            <div
+                                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-[0.2em] mb-6">
+                                <Sparkles className="h-3 w-3"/>
+                                Empieza hoy
+                            </div>
+                        </a>
+
 
                         <h2 className="text-5xl md:text-7xl font-black font-serif text-slate-900 tracking-tighter leading-[0.85] mb-8">
                             Agenda tu <br/>
@@ -93,7 +96,14 @@ export function Contact() {
                         <div className="group p-8 rounded-[2.5rem] bg-slate-900 text-white shadow-2xl transition-all duration-300 hover:-translate-y-1">
                             <div className="flex justify-between items-start mb-6">
                                 <div className="h-12 w-12 rounded-2xl bg-white/10 flex items-center justify-center  group-hover:bg-primary group-hover:text-white transition-colors">
-                                    <MapPin className="h-6 w-6" />
+                                    <a
+                                        href="https://maps.google.com/?q=Puembo,Ecuador" // Reemplaza con tu link real de Google Maps
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <MapPin className="h-6 w-6" />
+                                    </a>
+
                                 </div>
                                 {/* Enlace sutil a Maps */}
                                 <a
@@ -108,7 +118,7 @@ export function Contact() {
 
                             <h4 className="font-black text-white uppercase tracking-tight mb-2">Modalidad</h4>
                             <p className="text-sm leading-relaxed text-slate-300 mb-6">
-                                Presencial en <span className="text-white font-bold">Puembo-Ecuador</span> o <span className="text-white font-bold">Virtual</span> a todo el país.
+                                Presencial en <span className="text-white font-bold">Puembo-Ecuador</span> o <span className="text-white font-bold">Virtual</span> en todo el país.
                             </p>
 
                             {/* Botón de acción secundario dentro de la tarjeta */}

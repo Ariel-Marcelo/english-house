@@ -12,7 +12,7 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-foreground text-background">
+    <footer className="border-t border-border bg-primary text-background">
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Brand */}
@@ -24,7 +24,7 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-3 text-sm opacity-70 leading-relaxed">
-              Clases personalizadas de inglés para adolescentes y adultos.
+              Clases personalizadas de inglés para niños,  adolescentes y adultos.
               Presencial en Quito o virtual en todo Ecuador.
             </p>
           </div>
@@ -54,13 +54,15 @@ export function Footer() {
                 <MapPin className="h-4 w-4 shrink-0" />
                 Vía Férrea N5-22 y 25 de Julio (Ciclovía Chaquiñan de Puembo) Quito, Ecuador
               </li>
-              <li className="flex items-center gap-2 text-sm opacity-70">
-                <Phone className="h-4 w-4 shrink-0" />
-                +593 963 951 325
+              <li className="flex items-center  text-sm opacity-70">
+                <a href="https://wa.me/593963951325" className="flex gap-2" target="_blank" rel="noopener noreferrer">
+                  <Phone className="h-4 w-4 shrink-0" />
+                  +593 963 951 325
+                </a>
               </li>
               <li className="flex items-center gap-2 text-sm opacity-70">
                 <Mail className="h-4 w-4 shrink-0" />
-                Correo electrónico
+                get.together.es@gmail.com
               </li>
               <li className="flex items-center gap-2 text-sm opacity-70">
                 <HeartPlus className="h-4 w-4 shrink-0" />

@@ -31,8 +31,8 @@ export function Hero() {
         </div>
 
         {/* Area del Logo - Posición fija con espacio protegido */}
-        <div className="absolute top-0 left-0 z-20 p-8 md:p-12">
-          <div className="relative h-16 w-44 md:h-20 md:w-56 lg:h-24 lg:w-72">
+        <div className="absolute top-0 left-0 z-20 p-8 md:p-6 lg:pl-10">
+          <div className="relative h-16 w-44 md:h-20 md:w-56 lg:h-34 lg:w-82">
             <Image
                 src="/logo.png"
                 alt="Get Together Logo"
@@ -52,8 +52,8 @@ export function Hero() {
               <span className="text-primary italic font-light">a tu ritmo.</span>
             </h1>
 
-            <p className="max-w-lg text-lg md:text-xl font-serif italic text-slate-600 leading-relaxed border-l-4 border-primary/20 pl-6 mb-10">
-              Un plan hecho a tu medida para niños, adolescentes y adultos. Presencial en Puembo o virtual a todo el país.
+            <p className="max-w-lg text-lg md:text-xl font-serif italic text-slate-600 leading-relaxed border-l-4 border-primary/20 pl-6 mb-10 font-bold">
+              Un plan hecho a tu medida para niños, adolescentes y adultos. Presencial en Puembo o virtual en todo el país.
             </p>
 
             {/* CTAs con mejor espaciado */}

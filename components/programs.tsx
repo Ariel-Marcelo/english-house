@@ -2,7 +2,7 @@ import {
   GraduationCap,
   Plane,
   Briefcase,
-  MessageCircle,
+  Coffee,
   Languages,
   ArrowRight,
   Sparkles
@@ -35,16 +35,16 @@ const programs = [
   },
   {
     icon: Briefcase,
-    title: "Conversación personalizada",
-    description: "Sesiones enfocadas en tu fluidez y seguridad al hablar.",
+    title: "Tareas Dirigidas",
+    description: "Acompañamiento académico para escolares.",
     bg: "bg-primary/5",
     accent: "text-primary",
     order: "order-4"
   },
   {
-    icon: MessageCircle,
+    icon: Coffee ,
     title: "Social Hour - Language Exchange",
-    description: "Espacios guiados de práctica en un entorno social y relajado. El objetivo es hablar, equivocarse y ganar confianza usando el inglés dentro de una experiencia real y segura.",
+    description: "Nuestro espacio favorito para soltarse y ganar seguridad al hablar. Un espacio social para conversar  tomar un café y practicar inglés a través de conversaciones reales, en un ambiente relajado y dinámico. Más que una clase una experiencia",
     bg: "bg-white border-2 border-primary/10",
     accent: "text-primary",
     featured: true,
@@ -104,6 +104,7 @@ export function Programs() {
                       </p>
                     </div>
 
+                    {/*
                     {program.featured && (
                         <div className="mt-8 pt-6 border-t border-primary/10">
                           <div className="flex items-center gap-2 text-primary mb-2">
@@ -115,6 +116,7 @@ export function Programs() {
                           </p>
                         </div>
                     )}
+                    */}
                   </div>
                 </div>
             ))}
