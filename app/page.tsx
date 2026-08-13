@@ -4,6 +4,7 @@ import { Methodology } from "@/components/methodology"
 import { Programs } from "@/components/programs"
 import { Modalities } from "@/components/modalities"
 import { Testimonials } from "@/components/testimonials"
+import { CommentsSection } from "@/components/comments-section"
 import { About } from "@/components/about"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
@@ -18,6 +19,7 @@ export default function Page() {
         <Programs />
         <Modalities />
         <Testimonials />
+        <CommentsSection />
         <About />
         <Contact />
       </main>
@@ -25,3 +27,4 @@ export default function Page() {
     </>
   )
 }
+
