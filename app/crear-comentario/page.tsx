@@ -177,7 +177,7 @@ function CreateCommentForm() {
           </form>
 
           <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-            <span>English House Admin</span>
+            <span>Get Together - English Studio</span>
             <Link href="/" className="hover:text-primary transition-colors flex items-center gap-1">
               <ArrowLeft className="w-3 h-3" /> Volver al Inicio
             </Link>
@@ -297,7 +297,7 @@ function CreateCommentForm() {
                 disabled={isSubmitting}
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
-                placeholder="Escribe aquí tu experiencia o testimonio sobre English House..."
+                placeholder="Escribe aquí tu experiencia o testimonio sobre Get Together - English Studio..."
                 className={`w-full px-4 py-3.5 rounded-2xl border ${
                   errors.comment ? "border-red-300 bg-red-50/30" : "border-slate-200"
                 } focus:outline-none focus:ring-2 focus:ring-primary/40 text-slate-900 text-sm font-medium transition-all leading-relaxed disabled:opacity-50`}
