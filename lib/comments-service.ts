@@ -12,7 +12,12 @@ export interface CommentItem {
 export const DEFAULT_SECRET_TOKEN = "aW5ncmVzYXJjb21lbnRhcmlv"
 export const DEFAULT_SECRET_WORD = "ingresarcomentario"
 
-export const GOOGLE_SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || "https://script.google.com/macros/s/AKfycbzzIq4-Tp8qx7O3KhLVAtpaut7aYZCoCfXl7PV4-ExP3prMjxihk6Ri8vpZ1Owt5Up1Jg/exec"
+/**
+ * Obtiene la URL de Google Script ÚNICAMENTE desde la variable de entorno NEXT_PUBLIC_GOOGLE_SCRIPT_URL.
+ */
+export function getGoogleScriptUrl(): string {
+  return process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || ""
+}
 
 /**
  * Valida si el token recibido en la URL (Base64) coincide con la palabra clave secreta.
@@ -40,7 +45,6 @@ export function validateToken(tokenStr: string | null): boolean {
 export function formatCommentDate(dateStr?: string): string {
   if (!dateStr) return ""
   
-  // Si ya está en texto en español
   if (dateStr.includes(" de ")) return dateStr
 
   try {
@@ -61,18 +65,16 @@ export function formatCommentDate(dateStr?: string): string {
   }
 }
 
-const LOCAL_STORAGE_KEY = "english_house_comments_v1"
-
 /**
- * Obtiene la lista de comentarios ÚNICAMENTE desde Google Sheets API (y respaldos en LocalStorage).
- * Si no hay comentarios en Google Sheets, retorna un arreglo vacío.
+ * Obtiene la lista de comentarios desde Google Sheets API.
  */
 export async function fetchComments(): Promise<CommentItem[]> {
+  const apiUrl = getGoogleScriptUrl()
   let remoteComments: CommentItem[] = []
 
-  if (GOOGLE_SCRIPT_URL) {
+  if (apiUrl) {
     try {
-      const res = await fetch(GOOGLE_SCRIPT_URL, { method: "GET", cache: "no-store" })
+      const res = await fetch(apiUrl, { method: "GET", cache: "no-store" })
       if (res.ok) {
         const data = await res.json()
         if (Array.isArray(data)) {
@@ -80,37 +82,15 @@ export async function fetchComments(): Promise<CommentItem[]> {
         }
       }
     } catch (error) {
-      console.warn("No se pudo conectar a Google Sheets API, revisando LocalStorage local.", error)
+      console.warn("No se pudo conectar a Google Sheets API.", error)
     }
   }
 
-  // Cargar comentarios locales guardados temporalmente (LocalStorage)
-  let localComments: CommentItem[] = []
-  if (typeof window !== "undefined") {
-    try {
-      const stored = localStorage.getItem(LOCAL_STORAGE_KEY)
-      if (stored) {
-        localComments = JSON.parse(stored)
-      }
-    } catch (e) {
-      console.error("Error leyendo comentarios locales:", e)
-    }
-  }
-
-  // Combinar sin duplicar
-  const combined = [...remoteComments]
-
-  localComments.forEach((lc) => {
-    if (!combined.some((rc) => rc.id === lc.id || (rc.name === lc.name && rc.comment === lc.comment))) {
-      combined.unshift(lc)
-    }
-  })
-
-  return combined
+  return remoteComments
 }
 
 /**
- * Envía un nuevo comentario a Google Sheets y lo respalda en LocalStorage.
+ * Envía un nuevo comentario a Google Sheets.
  */
 export async function submitComment(data: {
   name: string
@@ -125,6 +105,7 @@ export async function submitComment(data: {
     return { success: false, message: "El comentario es obligatorio." }
   }
 
+  const apiUrl = getGoogleScriptUrl()
   const now = new Date()
   const formattedDate = formatCommentDate(now.toISOString())
 
@@ -138,21 +119,15 @@ export async function submitComment(data: {
     approved: true
   }
 
-  // Guardar en LocalStorage para actualización instantánea
-  if (typeof window !== "undefined") {
-    try {
-      const stored = localStorage.getItem(LOCAL_STORAGE_KEY)
-      const existing: CommentItem[] = stored ? JSON.parse(stored) : []
-      existing.unshift(newComment)
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(existing))
-    } catch (e) {
-      console.error("Error al guardar localmente:", e)
+  if (!apiUrl) {
+    return {
+      success: false,
+      message: "No se ha configurado la variable de entorno NEXT_PUBLIC_GOOGLE_SCRIPT_URL."
     }
   }
 
-  // Enviar a Google Sheets API
   try {
-    await fetch(GOOGLE_SCRIPT_URL, {
+    await fetch(apiUrl, {
       method: "POST",
       mode: "no-cors",
       headers: { "Content-Type": "application/json" },
@@ -163,10 +138,10 @@ export async function submitComment(data: {
       message: "¡Tu comentario ha sido publicado y guardado exitosamente!"
     }
   } catch (err) {
-    console.warn("No se pudo conectar a Google Sheets, pero se guardó localmente:", err)
+    console.warn("Error al enviar a Google Sheets:", err)
     return {
-      success: true,
-      message: "Tu comentario se guardó localmente y se actualizará en breve."
+      success: false,
+      message: "No se pudo conectar con el servidor de Google Sheets."
     }
   }
 }
